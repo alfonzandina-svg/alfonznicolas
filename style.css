@@ -1,0 +1,185 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #34424e;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background Accents (The Blue Lines) */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 20px;
+    width: 8px; height: 100%;
+    background: #79bce4;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 40px;
+    width: 8px; height: 75%;
+    background: #79bce4;
+}
+
+.bottom-lines {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    width: 75%;
+}
+
+.line-1 { height: 12px; background: #79bce4; width: 100%; margin-bottom: 8px; }
+.line-2 { height: 12px; background: #79bce4; width: 80%; margin-left: 20%; }
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px;
+}
+
+.logo {
+    color: #4ee6c9;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li { margin-left: 25px; }
+
+nav ul li a {
+    text-decoration: none;
+    color: #4ee6c9;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav ul li a.active { color: #ff3b3b; }
+
+/* Content Animation */
+.container {
+    padding: 0 100px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Home Page Specifics */
+.hero { display: flex; align-items: center; justify-content: space-around; margin-top: 50px; }
+.hero-text { font-family: 'Courier New', Courier, monospace; color: #e1ad5f; font-size: 45px; line-height: 1.2; }
+.tag { background: #e1ad5f; color: #1a1a1a; padding: 5px 15px; font-size: 18px; display: inline-block; margin-top: 20px; font-family: sans-serif; font-weight: bold;}
+.profile-frame { border: 8px solid #e1ad5f; padding: 15px; }
+.profile-frame img { width: 350px; height: auto; display: block; }
+
+/* Typography for Subpages */
+h1.title { color: #e1ad5f; font-size: 50px; text-align: center; margin-bottom: 40px; text-transform: uppercase; }
+.content-list { max-width: 800px; margin: 0 auto; font-size: 20px; line-height: 1.6; }
+.content-list ul { list-style-type: disc; margin-left: 40px; }
+.content-list li { margin-bottom: 15px; }
+
+.achievements { margin-top: 40px; text-align: center; }
+.achievements h2 { font-size: 28px; margin-bottom: 20px; }
+.achievements p { font-weight: bold; margin-bottom: 5px; }
+
+/* Contact Specifics */
+.contact-item { display: flex; align-items: center; margin-bottom: 25px; font-size: 24px; font-weight: bold; }
+.contact-item img { width: 50px; margin-right: 30px; }
+.email-box { border: 2px solid #3498db; padding: 10px 20px; width: fit-content; }
+
+/* Contact Layout Alignment */
+.contact-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.contact-item {
+    margin-bottom: 10px;
+}
+
+.email-text {
+    border: 1px solid #79bce4;
+    padding: 5px 15px;
+    display: inline-block;
+}
+
+/* Form Styling */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 8px;
+    border-top: 4px solid #e1ad5f;
+    animation: fadeInUp 1s ease-out;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    gap: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    background: #2c3e50;
+    border: 1px solid #444;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #e1ad5f;
+}
+
+.submit-btn {
+    background: #e1ad5f;
+    color: #1a1a1a;
+    padding: 12px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #4ee6c9;
+    transform: translateY(-2px);
+}
+
+/* Ensure container scrolls if screen is small */
+body {
+    overflow-y: auto; 
+}
